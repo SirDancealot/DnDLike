@@ -1,0 +1,15 @@
+Name:	"'test'"
+Class:	"'Barbarian'"
+Age:	"33"
+Race:	"'Dwarf, Hill Dwarf'"
+Max Hp:	"40"
+Alignment:	"'Lawful neutral'"
+Languages:	"['Common', 'Dwarvish']"
+Speed:	"25"
+Size:	"'Medium'"	Flavor size:	3 Feet
+Level:	"4"
+Stats:	"[15, 14, 15, 12, 11, 8]"	Format: [str, dex, con, int, wis, cha]
+Resistances:	"[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0]"	format: [acid, phys bludgeoning, magic bludgeoning, cold, fire, force, lightning, necrotic, phys piercing, magic piercing, poison, psychic, radiant, phys slashing, magic slashing, thunder]
+Abilitie ids:	"[]"
+Proficiencies:	"[]"
+Traits:	"['darkvision range 60', 'HP, PL1']"

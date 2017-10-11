@@ -1,0 +1,18 @@
+Name:	"'flowchart'"
+Class:	"'Barbarian'"
+Age:	"15"
+Race:	"'Dragonborn, Black'"
+Max Hp:	"14"
+AC:	"12"
+Proficieny bonus:	"2"
+Alignment:	"'True neutral'"
+Languages:	"['Common', 'Draconic']"
+Speed:	"30"
+Size:	"'Medium'"	Flavor size:	5 Feet
+Level:	"1"
+Stats:	"[12, 12, 14, 15, 16, 17]"	Format: [str, dex, con, int, wis, cha]
+Resistances:	"[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"	format: [acid, phys bludgeoning, magic bludgeoning, cold, fire, force, lightning, necrotic, phys piercing, magic piercing, poison, psychic, radiant, phys slashing, magic slashing, thunder]
+Abilitie ids:	"['BW, AL']"
+Proficiencies:	"[]"
+Traits:	"[]"
+Equipment:	"['Padded']"

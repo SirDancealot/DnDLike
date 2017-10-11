@@ -1,0 +1,18 @@
+Name:	"'default1'"
+Class:	"'Barbarian'"
+Age:	"454"
+Race:	"'Elf, High Elf'"
+Max Hp:	"17"
+AC:	"-14"
+Proficieny bonus:	"-2"
+Alignment:	"'True neutral'"
+Languages:	"['Common', 'Elvish']"
+Speed:	"30"
+Size:	"'Medium'"	Flavor size:	5 Feet
+Level:	"3"
+Stats:	"[5, 10, 13, -19, 11, 9]"	Format: [str, dex, con, int, wis, cha]
+Resistances:	"[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"	format: [acid, phys bludgeoning, magic bludgeoning, cold, fire, force, lightning, necrotic, phys piercing, magic piercing, poison, psychic, radiant, phys slashing, magic slashing, thunder]
+Abilitie ids:	"[]"
+Proficiencies:	"['Longsword', 'Shortsword', 'Shortbow', 'Longbow']"
+Traits:	"[]"
+Equipment:	"['Ring Mail']"

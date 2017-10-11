@@ -1,0 +1,17 @@
+Name:	"'ACtest'"
+Class:	"'Barbarian'"
+Age:	"15"
+Race:	"'Dragonborn, Copper'"
+Max Hp:	"12"
+AC:	"14"
+Alignment:	"'True neutral'"
+Languages:	"['Common', 'Draconic']"
+Speed:	"30"
+Size:	"'Medium'"	Flavor size:	5 Feet
+Level:	"1"
+Stats:	"[10, 14, 9, 11, 12, 13]"	Format: [str, dex, con, int, wis, cha]
+Resistances:	"[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"	format: [acid, phys bludgeoning, magic bludgeoning, cold, fire, force, lightning, necrotic, phys piercing, magic piercing, poison, psychic, radiant, phys slashing, magic slashing, thunder]
+Abilitie ids:	"['BW, AL']"
+Proficiencies:	"[]"
+Traits:	"[]"
+Equipment:	"['Hide']"

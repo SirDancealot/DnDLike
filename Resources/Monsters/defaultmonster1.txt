@@ -1,0 +1,18 @@
+Name:	"'defaultmonster1'"
+Class:	"'Barbarian'"
+Age:	"14"
+Race:	"'Dragonborn, Black'"
+Max Hp:	"29"
+AC:	"12"
+Proficieny bonus:	"2"
+Alignment:	"'Lawful good'"
+Languages:	"['Common', 'Elvish', 'Common', 'Draconic']"
+Speed:	"30"
+Size:	"'Medium'"	Flavor size:	5 Feet
+Level:	"3"
+Stats:	"[7, 10, 13, 19, 11, 10, 7, 14, 14, 11, 11, 13]"	Format: [str, dex, con, int, wis, cha]
+Resistances:	"[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"	format: [acid, phys bludgeoning, magic bludgeoning, cold, fire, force, lightning, necrotic, phys piercing, magic piercing, poison, psychic, radiant, phys slashing, magic slashing, thunder]
+Abilitie ids:	"['BW, AL']"
+Proficiencies:	"['Longsword', 'Shortsword', 'Shortbow', 'Longbow']"
+Traits:	"[]"
+Equipment:	"['Ring Mail', 'Hide']"
