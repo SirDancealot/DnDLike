@@ -36,7 +36,7 @@ classDict = {}
 
 
 #Defining functions
-def saveCharacter(name, stats, movementSpeed, level, charType, race, resistances, size, sizeFlavor, langs, age, alignment, subRace, abilities, proficiencies, traits, charClass, health, AC, equipment, profBonus):		#Saves the charecter you have created in a txt document in one of the folders depending on if your char is a pleyer char or an enemie
+def saveCharacter(name, stats, movementSpeed, level, charType, race, resistances, size, sizeFlavor, langs, age, alignment, subRace, abilities, proficiencies, traits, charClass, health, AC, equipment, profBonus):		#Saves the character you have created in a txt document in one of the folders depending on if your char is a pleyer char or an enemie
 	if charType == "m":
 		file = open("Resources/Monsters/"+str(name)+".txt","w")
 	else:
@@ -186,10 +186,10 @@ def AssignRace():	#Assigning specific race values and traits
 			stats[i[0]] += i[1]
 	movementSpeed = raceDict['speed']
 	size = raceDict['size']
-	sizeFlavor = GetValidOption((raceDict['sizeFlavor'][0])-1, (raceDict['sizeFlavor'][1])+1, "That is not a valid size in feet. Please try again: ", "A typical " + race.lower() + " is between " + str(raceDict['sizeFlavor'][0]) + " and " + str(raceDict['sizeFlavor'][1]) + " feet tall. \nHow tall do you want to be in feet, i have given you a foot leway on each side? ")
+	sizeFlavor = GetValidOption((raceDict['sizeFlavor'][0])-1, (raceDict['sizeFlavor'][1])+1, "That is not a valid size in feet. Please try again: ", "A typical " + race.lower() + " is between " + str(raceDict['sizeFlavor'][0]) + " and " + str(raceDict['sizeFlavor'][1]) + " feet tall. \nI have given you a foot leway on each side to choose from. \nHow tall do you want your character to be? ")
 	for lang in raceDict['langs']:
 		langs.append(lang)
-	age = GetValidOption(math.floor((raceDict['age'][0]*2)/3), math.floor((raceDict['age'][1]*2)/3), "That is either too young or too old for a " + race.lower() + "to be usefull for a party.\nPlease choos an age between " + str(math.floor((raceDict['age'][0]*2)/3)) + " and " + str(math.floor((raceDict['age'][1]*2)/3)) + " years: ", "Most " + race.lower() + "s becomes mature at age " + str(raceDict['age'][0]) + " and die around the age of " + str(raceDict['age'][1]) + ". \nYou can choose an age for this charecter in the range: " + str(math.floor((raceDict['age'][0]*2)/3)) + " to " + str(math.floor((raceDict['age'][1]*2)/3)) + " years: ")
+	age = GetValidOption(math.floor((raceDict['age'][0]*2)/3), math.floor((raceDict['age'][1]*2)/3), "That is either too young or too old for a " + race.lower() + "to be usefull for a party.\nPlease choos an age between " + str(math.floor((raceDict['age'][0]*2)/3)) + " and " + str(math.floor((raceDict['age'][1]*2)/3)) + " years: ", "Most " + race.lower() + "s becomes mature at age " + str(raceDict['age'][0]) + " and die around the age of " + str(raceDict['age'][1]) + ". \nYou can choose an age for this character in the range: " + str(math.floor((raceDict['age'][0]*2)/3)) + " to " + str(math.floor((raceDict['age'][1]*2)/3)) + " years: ")
 	if 'resist' in raceDict:
 		resistances[raceDict['resist']] = 1
 	if 'traits' in raceDict:
@@ -358,7 +358,6 @@ def AssignDicts():	#a function to assign all my dictionaries for races, calsses 
 						'White': 			[["resistances",3],["abilities",["BW, CC"]]]
 					} 	#Dragonborn
 	DwarfRace = 	{	'Hill Dwarf': 		[["stats",[4,1]],["traits",["HP, PL1"]]],
-						'Mountain Dwarf': 	[["stats",[0,2]],["proficiencies",["Light Armor","Medium Armor"]]]
 					}		#Dwarf
 	ElfRace = 		{	'High Elf':			[["stats",[3,1]],["proficiencies",["Longsword","Shortsword","Shortbow","Longbow"]]],
 						'Wood Elf':			[["stats",[4,1]],["proficiencies",["Longsword","Shortsword","Shortbow","Longbow"]],["movement",35]],
@@ -376,7 +375,7 @@ def AssignDicts():	#a function to assign all my dictionaries for races, calsses 
 def AssignAlignment():
 	global alignment
 	alignments = ["Lawful good","Neutral good","Chaotic good","Lawful neutral","True neutral","Chaotic neutral","Lawful evil","Neutral evil","Chaotic evil"]
-	alignment = alignments[GetValidOption(1, 9, "That value is not in the list alignment list. Please try again: ", "Choose which alignment you're charecter will have\n" + "1.\t" + str(alignments[0] ) + "\n" + "2.\t" + str(alignments[1] ) + "\n" + "3.\t" + str(alignments[2] ) + "\n" + "4.\t" + str(alignments[3] ) + "\n" + "5.\t" + str(alignments[4] ) + "\n" + "6.\t" + str(alignments[5] ) + "\n" + "7.\t" + str(alignments[6] ) + "\n" + "8.\t" + str(alignments[7] ) + "\n" + "9.\t" + str(alignments[8] ) + "\n" + "What alignment do you want? ")-1]
+	alignment = alignments[GetValidOption(1, 9, "That value is not in the list alignment list. Please try again: ", "Choose which alignment you're character will have\n" + "1.\t" + str(alignments[0] ) + "\n" + "2.\t" + str(alignments[1] ) + "\n" + "3.\t" + str(alignments[2] ) + "\n" + "4.\t" + str(alignments[3] ) + "\n" + "5.\t" + str(alignments[4] ) + "\n" + "6.\t" + str(alignments[5] ) + "\n" + "7.\t" + str(alignments[6] ) + "\n" + "8.\t" + str(alignments[7] ) + "\n" + "9.\t" + str(alignments[8] ) + "\n" + "What alignment do you want? ")-1]
 
 def AssignClass():
 	global charClass
@@ -454,12 +453,12 @@ def RunProgram():	#I make the program structure a function in order to guarrante
 	global profBonus
 	
 	
-	name = input("What do you want to call this charecter? ")								#every character needs a name
+	name = input("What do you want to call this character? ")								#every character needs a name
 	charType = input("is this character ment to be an monster or a player? m/p ").lower()
 	while(charType!= "m" and charType != "p"):											#loop to ensure the player chooses a valid option
 		print("you did not choose 'm' or 'p'")
 		charType = input("is this character ment to be an monster or a player? m/p ").lower()		
-	level = GetValidOption(1,20,"That is not a valid level for a DnD player\nPlease try again ","what level should this charecter start out as? ")
+	level = GetValidOption(1,20,"That is not a valid level for a DnD player\nPlease try again ","what level should this character start out as? ")
 	statChoiseMethods = [RollStats,PointBuyStats,PredefinedStats]
 	statChoiseMethods[GetValidOption(1, 3, "you did not choose 1/2/3. Please try again: ", "How do you want to choose your stats?\n1.\tRoll stats\n2.\tPoint buy\n3.\tPredefined stats\nChoose 1/2/3: ")-1]()
 	AssignRace()	

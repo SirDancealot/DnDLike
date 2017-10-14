@@ -28,17 +28,17 @@ def AssignDicts():
 		count += 1
 	
 def RunProgram():
-	input("This option is not done yet")
+	input("This option is not done yet.\nCurrently only imports a character file into memory and prints it to the output")
 	end = False
 	chosenCharType = False
 	while(not chosenCharType):
 		chosenChar = False
-		levelChoise = input("Do you want to level up a character or a monster or not level up at all 'p'/'m'/'e': ").lower()
+		levelChoise = input("Do you want to level up a player character, monster or not level up at all 'p'/'m'/'e': ").lower()
 		while(not chosenChar):
 			if levelChoise == "p":
 				chars = [x for x in os.listdir("Resources/Characters") if x.endswith(".txt")]
 				if len(chars) == 0:
-					print("There are no currently existing characters to level")
+					print("There are currently no existing characters to level")
 					break
 				chooseCharMessage = "Your current characters are:\n"
 				for i in range(len(chars)):
@@ -75,5 +75,5 @@ def RunProgram():
 		print(levelChar.read())
 	
 	
-		input("The charecter has been leveled up")
+		input("The character has been leveled up")
 	os.system('cls')

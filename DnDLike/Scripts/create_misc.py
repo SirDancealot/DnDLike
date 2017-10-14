@@ -17,7 +17,7 @@ def CreateArmor():
 
 
 def RunProgram():
-	input("This option is not done yet")
+	input("This option is not done yet, currently only creates a test file")
 	choises = [CreateWeapon, CreateSpell, CreateArmor]
 	
 	choiseString = "There are " + str(len(choises)) + " different things to do in this part of the program:\n"

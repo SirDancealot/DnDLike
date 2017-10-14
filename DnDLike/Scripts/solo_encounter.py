@@ -150,7 +150,7 @@ def RunProgram():
 	
 		turnCount = 0
 		while(health[0] > 0 and health[1] > 0):
-			print("\n---------------------------")
+			print("\n" + ("-"*30))
 			print("Turn: " + str(math.floor(turnCount/2)+1) + "\tRound: " + str((turnCount%2)+1))
 			print(player['Name'] + " has " + str(health[0]) + " HP left")
 			print(monster['Name'] + " has " + str(health[1]) + " HP left\n")
