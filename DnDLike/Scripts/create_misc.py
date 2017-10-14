@@ -8,6 +8,8 @@ def CreateWeapon():
 	
 def CreateSpell():
 	print("spell")
+	file = open("Resources/Spells/test.py","w")
+	file.write("abilityID=5\nabilityName='Fire Bolt'\ndamagelist=[[8,2,acid],[damage,fire]]")
 	
 	
 def CreateArmor():

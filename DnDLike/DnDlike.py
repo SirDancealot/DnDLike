@@ -20,4 +20,4 @@ while(playing):
 	else:
 		os.system('cls')
 		programs[option-1].RunProgram()
-input("The program is now closing, thank you for playing")
+input("The program is now closing, thank you for playing\nIf you enjoyed you may consider donating at 'https://www.paypal.me/SirEraisuithon'")
