@@ -89,10 +89,7 @@ def RunProgram():
 	global abilityIDs
 	global charList
 	
-	
 	#print(str(abilityIDs))
-	print("Attacks: " + str(attacks))
-	
 	turnOrder = []
 	input("This option is not done yet, but some of the functionality has been implemented \nPress enter to continue")
 	if AssignPlayer() is not False and AssignMonster() is not False:
