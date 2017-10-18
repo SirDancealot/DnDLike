@@ -25,8 +25,14 @@ Planned content:
 	- Possibly other stuff
 
 Changelog:
+	Alpha V0.1.0.1
+		- Decentralized attacks from being hard-coded in solo_encount.py to be seperate programs in Resources/Spells
+		- Moved often used functions to a central program (universal_functions.py)
+		- Updated Legal-information
+
 	Alpha V0.1:
 		- Created base program stucture
 		- Implemented character creation
 		- Implemented the rudementaries of combat
 		- Created data structure
+		- Created Legal-information

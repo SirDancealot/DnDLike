@@ -2,12 +2,23 @@ import random
 import math
 import os
 import ast
+import sys
+sys.path.append("Resources/")
 from Scripts import create_character
+from Scripts import universal_functions
+abilityIDs = []
+attacks = []
+from Spells import *
+
 
 health = []
 player = {}
 monster = {}
 charList = [player, monster]
+
+def TempFunc():
+	pass
+
 
 def rollDice(low,high,rolls):
 	sum = 0
@@ -26,7 +37,7 @@ def AssignPlayer():
 		chooseCharMessage += (str(i+1) + ".\t" + str(chars[i].split(".")[0]) + "\n")
 	chooseCharMessage += "What character do you want to play as? "
 	failString = "That is not a valid character choise, please try again: "			
-	playerCharNum = create_character.GetValidOption(1,len(chars),failString,chooseCharMessage)
+	playerCharNum = universal_functions.GetValidOption(1,len(chars),failString,chooseCharMessage)
 	playerFile = open("Resources/Characters/"+chars[playerCharNum-1],"r")
 	for line in playerFile:
 		player[line.split(":")[0]] = ast.literal_eval(line.split("\"")[1])
@@ -43,77 +54,21 @@ def AssignMonster():
 		chooseMonsMessage += (str(i+1) + ".\t" + str(monsters[i].split(".")[0]) + "\n")
 	chooseMonsMessage += "What monster do you want to play against? "
 	failString = "That is not a valid monster choise, please try again: "			
-	monsterCharNum = create_character.GetValidOption(1,len(monsters),failString,chooseMonsMessage)
+	monsterCharNum = universal_functions.GetValidOption(1,len(monsters),failString,chooseMonsMessage)
 	monsterFile = open("Resources/Monsters/"+monsters[monsterCharNum-1],"r")
 	for line in monsterFile:
 		monster[line.split(":")[0]] = ast.literal_eval(line.split("\"")[1])
 	monsterFile.close()
 	
-def FireBolt(user, target):
-	global charList
-	global health
-	intMod = math.floor((charList[user]['Stats'][3]-10)/2)
-	attackRoll = rollDice(1,20,1) + intMod
-	print("you used fireball")
-	if attackRoll-intMod == 20:
-		damage = 2*(rollDice(1,10,1))+intMod
-		print("you rolled a critical and dealt: " + str(damage) + " damage")
-		health[target] -= damage
-	elif attackRoll >= charList[target]['AC']:
-		damage = rollDice(1,10,1)+intMod
-		print("you hit and dealt: " + str(damage) + " damage")
-		health[target] -= damage
-	else:
-		print("you missed")
-
-def SwordAttack(user, target):
-	global charList
-	global health
-	strMod = math.floor((charList[user]['Stats'][0]-10)/2)
-	print("you attacked with your sword")
-	attackRoll = rollDice(1,20,1) + strMod
-	if attackRoll-strMod == 20:
-		damage = 2*(rollDice(1,4,1))+strMod
-		print("you rolled a critical and dealt: " + str(damage) + " damage")
-		health[target] -= damage
-	elif attackRoll >= charList[target]['AC']:
-		damage = rollDice(1,4,1)+strMod
-		print("you hit and dealt: " + str(damage) + " damage")
-		health[target] -= damage
-	else:
-		print("You missed")
-	
-def DaggerAttack(user, target):
-	global charList
-	global health
-	dexMod = math.floor((charList[user]['Stats'][1]-10)/2)
-	print("you attacked with your dagger")
-	attackRoll = rollDice(1,20,1) + dexMod
-	if attackRoll-dexMod == 20:
-		damage = 2*(rollDice(1,4,1))+dexMod
-		print("you rolled a critical and dealt: " + str(damage) + " damage")
-		health[target] -= damage
-	elif attackRoll >= charList[target]['AC']:
-		damage = rollDice(1,4,1)+dexMod
-		print("you hit and dealt: " + str(damage) + " damage")
-		health[target] -= damage
-	else:
-		print("you mised")
-	
-def HealthPot(user, target):
-	global health
-	healing = rollDice(1,4,2)+2
-	health[user] += healing
-	print("You used a health pot and healed " + str(healing) + " health")
-	if health[user] > charList[user]['Max Hp']:
-		health[user] = charList[user]['Max Hp']
-	
-attacks = [FireBolt,SwordAttack,DaggerAttack,HealthPot]
-	
+#attacks = [SwordAttack,DaggerAttack,HealthPot]
+'''FireBolt,'''	
 def monsterTurn():
 	global attacks
+	global health
+	global charList
 	print("monster turn:")
-	attacks[random.randint(1,len(attacks))-1](1,0)
+	damageList = attacks[random.randint(1,len(attacks))-1](1,0,charList)
+	health[damageList[0]]+=damageList[1]
 	
 def playerTurn():
 	global attacks
@@ -123,13 +78,20 @@ def playerTurn():
 		chooseAttackString += str(i+1) + ".\t" + attacks[i].__name__ + "\n"
 	chooseAttackString  += "Which one do you want to do? "
 	
-	action = create_character.GetValidOption(1,len(attacks),"That is not a valid choise of an attack. Please try again: ", chooseAttackString)-1
-	attacks[action](0,1)
+	action = universal_functions.GetValidOption(1,len(attacks),"That is not a valid choise of an attack. Please try again: ", chooseAttackString)-1
+	damageList = attacks[action](0,1,charList)
+	health[damageList[0]]+=damageList[1]
 	
 def RunProgram():
 	global player
 	global monster
 	global health
+	global abilityIDs
+	global charList
+	
+	
+	#print(str(abilityIDs))
+	print("Attacks: " + str(attacks))
 	
 	turnOrder = []
 	input("This option is not done yet, but some of the functionality has been implemented \nPress enter to continue")
@@ -154,7 +116,9 @@ def RunProgram():
 			print("Turn: " + str(math.floor(turnCount/2)+1) + "\tRound: " + str((turnCount%2)+1))
 			print(player['Name'] + " has " + str(health[0]) + " HP left")
 			print(monster['Name'] + " has " + str(health[1]) + " HP left\n")
-			turnOrder[turnCount%2]()
+			userTurn = turnCount%2
+			turnOrder[userTurn]()
+			if health[userTurn] > charList[userTurn]['Max Hp'] : health[userTurn] = charList[userTurn]['Max Hp']
 			turnCount += 1
 			
 			

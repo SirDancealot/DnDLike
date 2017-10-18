@@ -1,9 +1,12 @@
 Content that applies to this license:
-as of Alpha V0.1
+as of Alpha V0.1.0.1
 	- everything in Resources/Classes
 	- everything in Resources/Races
+	- everything in Resources/Spells
 	- Scripts/create_character.py
 		- some ideas from the srd are currently hard coded into file
+		
+Earlier versions(no longer under the OGL):
 	- Scripts/solo_encounter.py
 		- some ideas from the srd are currently hard coded into file
 

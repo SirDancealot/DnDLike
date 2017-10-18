@@ -3,6 +3,7 @@ import math
 import os
 import ast
 from Scripts import create_character
+from Scripts import universal_functions
 
 classes = []
 
@@ -45,7 +46,7 @@ def RunProgram():
 					chooseCharMessage += (str(i+1) + ".\t" + str(chars[i].split(".")[0]) + "\n")
 				chooseCharMessage += "What character do you want to level up? "
 				failString = "That is not a valid character choise, please try again: "			
-				levelCharNum = create_character.GetValidOption(1,len(chars),failString,chooseCharMessage)
+				levelCharNum = universal_functions.GetValidOption(1,len(chars),failString,chooseCharMessage)
 				levelChar = open("Resources/Characters/"+chars[levelCharNum-1],"r")
 
 				chosenChar = True
@@ -60,7 +61,7 @@ def RunProgram():
 					chooseCharMessage += (str(i+1) + ".\t" + str(chars[i].split(".")[0]) + "\n")
 				chooseCharMessage += "What monster do you want to level up? "
 				failString = "That is not a valid monster choise, please try again: "
-				levelCharNum = create_character.GetValidOption(1,len(chars),failString,chooseCharMessage)
+				levelCharNum = universal_functions.GetValidOption(1,len(chars),failString,chooseCharMessage)
 				levelChar = open("Resources/Monsters/"+chars[levelCharNum-1],"r")
 				chosenChar = True
 				chosenCharType = True

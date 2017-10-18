@@ -2,6 +2,7 @@ import random
 import math
 import os
 from Scripts import create_character
+from Scripts import universal_functions
 
 def CreateWeapon():
 	print("weapon")
@@ -25,6 +26,6 @@ def RunProgram():
 		choiseString += str(i+1) + ".\t" + choises[i].__name__ + "\n"
 	choiseString += "What do you want to do: "
 	
-	choises[create_character.GetValidOption(1,len(choises),"That is not a number in the list. Please try again: ",choiseString)-1]()
+	choises[universal_functions.GetValidOption(1,len(choises),"That is not a number in the list. Please try again: ",choiseString)-1]()
 	input()
 	os.system('cls')
