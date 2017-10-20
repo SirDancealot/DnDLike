@@ -13,10 +13,10 @@ def DaggerAttack(user, target, charList):
 	print("You attacked with your dagger")
 	print("You rolled " + str(attackRoll)+ " to hit")
 	if attackRoll-dexMod == 20:
-		damage = 2*(universal_functions.rollDice(1,4,1))+dexMod
+		damage = 2*(universal_functions.rollDice(1,4,1,1))+dexMod
 		print("You rolled a critical and dealt: " + str(damage) + " damage")
 	elif attackRoll >= charList[target]['AC']:
-		damage = universal_functions.rollDice(1,4,1)+dexMod
+		damage = universal_functions.rollDice(1,4,1,1)+dexMod
 		print("You hit and dealt: " + str(damage) + " damage")
 	else:
 		damage = 0

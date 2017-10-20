@@ -20,12 +20,6 @@ def TempFunc():
 def ImportNewSpell(spellName):
 	exec("from Spells import " + spellName)
 
-def rollDice(low,high,rolls):
-	sum = 0
-	for i in range(rolls):
-		sum += random.randint(low,high)
-	return sum
-
 def AssignPlayer():
 	global player
 	chars = [x for x in os.listdir("Resources/Characters") if x.endswith(".txt")]

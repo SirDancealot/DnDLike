@@ -13,6 +13,7 @@ Current content:
 	- Character creation (not all classes implemented yet and needs some restructure)
 	- Basic combat
 	- Create attack spells
+	- Diceroller
 	
 Planned content:
 	- Level up system
@@ -22,10 +23,12 @@ Planned content:
 	- Gear/spell etc creation and usage
 		- Only need to add gear and buff spells
 	- Spell encykopedia (of spells in the spell folder)
-	- Diceroller
 	- Possibly other stuff
 
 Changelog:
+	Alpha V0.1.2.0A:
+		- Implemented a diceroller
+		
 	Alpha V0.1.1.0A:
 		- You can now create your own spells in the "Create equipment, spells or alike" section (although only attacking spells)
 

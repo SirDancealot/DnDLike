@@ -27,8 +27,16 @@ def GetCaller(stack):
 		if caller in callers:
 			return caller
 			
-def rollDice(low,high,rolls):
+def rollDice(low,high,rolls,keep):
+	if keep > rolls:
+		keep = rolls
 	sum = 0
-	for i in range(rolls):
-		sum += random.randint(low,high)
+	diceRolls = []
+	for rollX in range(rolls):
+		diceRolls.append(random.randint(low,high))
+	diceRolls.sort()
+	for notToKeep in range(rolls-keep):
+		del diceRolls[0]
+	for roll in diceRolls:
+		sum += roll
 	return sum

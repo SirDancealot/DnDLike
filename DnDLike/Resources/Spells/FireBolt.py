@@ -13,10 +13,10 @@ def FireBolt(user, target, charList):
 	print("You used firebolt")
 	print("You rolled " + str(attackRoll)+ " to hit")
 	if attackRoll-intMod == 20:
-		damage = 2*(universal_functions.rollDice(1,10,1))+intMod
+		damage = 2*(universal_functions.rollDice(1,10,1,1))+intMod
 		print("You rolled a critical and dealt: " + str(damage) + " damage")
 	elif attackRoll >= charList[target]['AC']:
-		damage = universal_functions.rollDice(1,10,1)+intMod
+		damage = universal_functions.rollDice(1,10,1,1)+intMod
 		print("You hit and dealt: " + str(damage) + " damage")
 	else:
 		damage = 0

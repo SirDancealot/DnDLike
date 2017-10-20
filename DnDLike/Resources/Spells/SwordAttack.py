@@ -13,10 +13,10 @@ def SwordAttack(user, target, charList):
 	print("You attacked with your sword")
 	print("You rolled " + str(attackRoll)+ " to hit")
 	if attackRoll-strMod == 20:
-		damage = 2*(universal_functions.rollDice(1,4,1))+strMod
+		damage = 2*(universal_functions.rollDice(1,4,1,1))+strMod
 		print("You rolled a critical and dealt: " + str(damage) + " damage")
 	elif attackRoll >= charList[target]['AC']:
-		damage = universal_functions.rollDice(1,4,1)+strMod
+		damage = universal_functions.rollDice(1,4,1,1)+strMod
 		print("You hit and dealt: " + str(damage) + " damage")
 	else:
 		damage = 0
