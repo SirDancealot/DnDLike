@@ -1,4 +1,4 @@
-Welcome to DnDlike.	Alpha V0.1.1.0A
+Welcome to DnDlike.	Alpha V0.1.2.0B
 This is a character creator/battle simulator based on the Dungeons and Dragons mechanics.
 
 Before modifying and distributing be sure to read content in folder "Legal information"
@@ -26,6 +26,9 @@ Planned content:
 	- Possibly other stuff
 
 Changelog:
+	Aplha V0.1.2.0B:
+		- Made noteation clearer and added negative modifyers in the diceroller
+
 	Alpha V0.1.2.0A:
 		- Implemented a diceroller
 		

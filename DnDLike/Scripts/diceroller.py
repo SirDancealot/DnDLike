@@ -4,7 +4,7 @@ import os
 from Scripts import universal_functions
 
 def RunProgram():
-	print("When rolling the format is: '5d12[k2][+7]'")
+	print("When rolling the format is: '[rolls]d[sides]<k[numDiceToKeep]><+/-[modifyers]>'")
 	rolling = True
 	while(rolling):
 		numDice = ""
@@ -19,6 +19,8 @@ def RunProgram():
 			numDice,roll = roll.split("d")
 			if "+" in roll:
 				roll,adition = roll.split("+")
+			elif "-" in roll:
+				roll,adition = roll.split("-")
 			else:
 				adition = "0"
 			if "k" in roll:
