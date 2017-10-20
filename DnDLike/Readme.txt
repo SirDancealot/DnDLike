@@ -26,8 +26,11 @@ Planned content:
 	- Possibly other stuff
 
 Changelog:
+	Aplha V0.1.2.0C:
+		- Fixed bug in diceroller where negative modifyers would add to total
+
 	Aplha V0.1.2.0B:
-		- Made noteation clearer and added negative modifyers in the diceroller
+		- Made notation clearer and added negative modifyers in the diceroller
 
 	Alpha V0.1.2.0A:
 		- Implemented a diceroller

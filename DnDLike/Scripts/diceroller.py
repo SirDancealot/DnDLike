@@ -21,6 +21,7 @@ def RunProgram():
 				roll,adition = roll.split("+")
 			elif "-" in roll:
 				roll,adition = roll.split("-")
+				adition = "-" + adition
 			else:
 				adition = "0"
 			if "k" in roll:
