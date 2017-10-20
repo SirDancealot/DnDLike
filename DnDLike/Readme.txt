@@ -20,9 +20,9 @@ Planned content:
 	- Full combat system
 		- Move spells, attacks and consumables out of being hard coded and save them in seperate files
 	- Gear/spell etc creation and usage
-		- Save them in seperate documents
-		- Make them usable in the game
+		- Only need to add gear and buff spells
 	- Spell encykopedia (of spells in the spell folder)
+	- Diceroller
 	- Possibly other stuff
 
 Changelog:
