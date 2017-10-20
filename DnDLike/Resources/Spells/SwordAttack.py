@@ -23,4 +23,4 @@ def SwordAttack(user, target, charList):
 		print("You missed")
 	return([target,-damage])
 
-exec(caller+".attacks.append(SwordAttack)")
+exec(caller+".abilities.append([abilityID,SwordAttack])")

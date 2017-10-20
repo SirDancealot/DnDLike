@@ -1,4 +1,4 @@
-Welcome to DnDlike.	Alpha V0.1.0.1B
+Welcome to DnDlike.	Alpha V0.1.1.0A
 This is a character creator/battle simulator based on the Dungeons and Dragons mechanics.
 
 Before modifying and distributing be sure to read content in folder "Legal information"
@@ -12,6 +12,7 @@ If you enjoy this content please consider donating to me at: "https://www.paypal
 Current content:
 	- Character creation (not all classes implemented yet and needs some restructure)
 	- Basic combat
+	- Create attack spells
 	
 Planned content:
 	- Level up system
@@ -25,10 +26,13 @@ Planned content:
 	- Possibly other stuff
 
 Changelog:
-	Alpha V0.1.0.1B
+	Alpha V0.1.1.0A:
+		- You can now create your own spells in the "Create equipment, spells or alike" section (although only attacking spells)
+
+	Alpha V0.1.0.1B:
 		- Removed some debugging text
 		
-	Alpha V0.1.0.1A
+	Alpha V0.1.0.1A:
 		- Decentralized attacks from being hard-coded in solo_encount.py to be seperate programs in Resources/Spells
 		- Moved often used functions to a central program (universal_functions.py)
 		- Updated Legal-information

@@ -23,4 +23,4 @@ def FireBolt(user, target, charList):
 		print("You missed")
 	return([target,-damage])
 
-exec(caller+".attacks.append(FireBolt)")
+exec(caller+".abilities.append([abilityID,FireBolt])")

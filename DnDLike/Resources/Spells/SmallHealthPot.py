@@ -12,4 +12,4 @@ def SmallHealthPot(user, target, charList):
 	print("You used a health pot and healed " + str(healing) + " health")
 	return([user,healing])
 
-exec(caller+".attacks.append(SmallHealthPot)")
+exec(caller+".abilities.append([abilityID,SmallHealthPot])")

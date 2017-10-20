@@ -23,4 +23,4 @@ def DaggerAttack(user, target, charList):
 		print("You missed")
 	return([target,-damage])
 
-exec(caller+".attacks.append(DaggerAttack)")
+exec(caller+".abilities.append([abilityID,DaggerAttack])")

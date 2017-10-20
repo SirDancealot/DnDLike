@@ -6,10 +6,8 @@ import sys
 sys.path.append("Resources/")
 from Scripts import create_character
 from Scripts import universal_functions
-abilityIDs = []
-attacks = []
+abilities = []
 from Spells import *
-
 
 health = []
 player = {}
@@ -19,6 +17,8 @@ charList = [player, monster]
 def TempFunc():
 	pass
 
+def ImportNewSpell(spellName):
+	exec("from Spells import " + spellName)
 
 def rollDice(low,high,rolls):
 	sum = 0
@@ -60,36 +60,35 @@ def AssignMonster():
 		monster[line.split(":")[0]] = ast.literal_eval(line.split("\"")[1])
 	monsterFile.close()
 	
-#attacks = [SwordAttack,DaggerAttack,HealthPot]
+
 '''FireBolt,'''	
 def monsterTurn():
-	global attacks
+	global abilities
 	global health
 	global charList
 	print("monster turn:")
-	damageList = attacks[random.randint(1,len(attacks))-1](1,0,charList)
+	damageList = abilities[random.randint(1,len(abilities))-1][1](1,0,charList)
 	health[damageList[0]]+=damageList[1]
 	
 def playerTurn():
-	global attacks
+	global abilities
 	print("player turn:")
-	chooseAttackString = ("you have " + str(len(attacks)) + " different actions:\n")
-	for i in range(len(attacks)):
-		chooseAttackString += str(i+1) + ".\t" + attacks[i].__name__ + "\n"
-	chooseAttackString  += "Which one do you want to do? "
+	chooseAttackString = ("you have " + str(len(abilities)) + " different actions:\n")
+	for i in range(len(abilities)):
+		chooseAttackString += str(i+1) + ".\t" + abilities[i][1].__name__ + "\n"
+	chooseAttackString  += "Which one do you want to use? "
 	
-	action = universal_functions.GetValidOption(1,len(attacks),"That is not a valid choise of an attack. Please try again: ", chooseAttackString)-1
-	damageList = attacks[action](0,1,charList)
+	action = universal_functions.GetValidOption(1,len(abilities),"That is not a valid choise of an attack. Please try again: ", chooseAttackString)-1
+	damageList = abilities[action][1](0,1,charList)
 	health[damageList[0]]+=damageList[1]
 	
 def RunProgram():
 	global player
 	global monster
 	global health
-	global abilityIDs
+	global abilities
 	global charList
 	
-	#print(str(abilityIDs))
 	turnOrder = []
 	input("This option is not done yet, but some of the functionality has been implemented \nPress enter to continue")
 	if AssignPlayer() is not False and AssignMonster() is not False:
@@ -125,7 +124,6 @@ def RunProgram():
 			print("Sorry, you lost")
 		else:
 			print("Congratulation, you won")
-	
 	
 	input("")
 	os.system('cls')
