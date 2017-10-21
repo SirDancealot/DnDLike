@@ -1,5 +1,5 @@
 'Name': "'Barbarian'", 
-'HitDie': "12"
+'HitDie': "12",
 '1': "['Rage','Unarmored Defense']", 
 '2': "['Reckless Attack','Danger Sense']", 
 '3': "['primal path']", 

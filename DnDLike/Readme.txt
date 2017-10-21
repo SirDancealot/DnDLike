@@ -10,7 +10,7 @@ All content in this program can be found in the 5e srd on: http://www.5esrd.com/
 If you enjoy this content please consider donating to me at: "https://www.paypal.me/SirEraisuithon"
 
 Current content:
-	- Character creation (not all classes implemented yet and needs some restructure)
+	- Character creation (all classes implemented but class features have no effect)
 	- Basic combat
 	- Create attack spells
 	- Diceroller
@@ -18,14 +18,21 @@ Current content:
 Planned content:
 	- Level up system
 	- Flush out some kinks in character creation, and possible add some more features
+	- Need to make class features have an effect
 	- Full combat system
 		- Move spells, attacks and consumables out of being hard coded and save them in seperate files
 	- Gear/spell etc creation and usage
 		- Only need to add gear and buff spells
 	- Spell encykopedia (of spells in the spell folder)
 	- Possibly other stuff
+	
+Known bugs:
+	- When making a spell in the spell creator it does not show up in the battle simulator until the program has ben restarted.
 
 Changelog:
+	Aplha V0.1.2.1A:
+		- Added all classes to character creation
+
 	Aplha V0.1.2.0C:
 		- Fixed bug in diceroller where negative modifyers would add to total
 

@@ -377,7 +377,7 @@ def AssignHp():
 		conMod = 0
 	
 	hitDie = classDict['HitDie']
-	preDefHpPrLv = (hitDie/2)+1
+	preDefHpPrLv = int((hitDie/2)+1)
 	health = hitDie + conMod
 	hpChoise = universal_functions.GetValidOption(1,2,"That is not a valid choise. Please try again: " ,"Do you want to get hp by:\n1.\tRolling it randomly on a d" + str(hitDie) + "\n2.\tChoose the predefined which for your class is: " + str(int(preDefHpPrLv)) + "\nWhat is your choise? ")
 	

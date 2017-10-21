@@ -38,7 +38,7 @@ def CreateSpell():
 	diceSizes = [4,6,8,10,12,20]
 	damageDice = diceSizes[universal_functions.GetValidOption(1,len(diceSizes),"That is not a index in the range.\nPlease try again: ","the dice sizes are: " + str(diceSizes) + "\nChoose which index you want as damage-dice for this spell: ")-1]
 		
-	diceRolls = universal_functions.GetValidOption(1,10000000,"You cannot have 0, negative numbers or decimal numbers as nuber of dice to roll.\nPlease try again: ","Choose how many damage-dice that should be rolled for this spell: ")
+	diceRolls = universal_functions.GetValidOption(1,1000000,"You cannot have 0, negative numbers, very high numbers or decimal numbers as nuber of dice to roll.\nPlease try again: ","Choose how many damage-dice that should be rolled for this spell: ")
 	
 	modifyer = universal_functions.GetValidOption(1,6,"That is not in the index.\nPlease try again: ", "[str, dex, con, int, wis, cha]\nChoose 1-6 which stat you want as modifyer for this spell ")-1
 	

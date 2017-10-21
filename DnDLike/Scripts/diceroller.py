@@ -30,7 +30,6 @@ def RunProgram():
 				keep = numDice
 				dice = roll
 				
-				
 			numDice = int(numDice)
 			adition = int(adition)
 			dice = int(dice)
@@ -42,8 +41,6 @@ def RunProgram():
 			
 		except ValueError:
 			print("Your input was not a valid string")
-	
-	
 	
 		keepRolling = input("Do you want to keep rolling (y/n)? ").lower()
 		if keepRolling not in ["y","yes","true","","t"]:
