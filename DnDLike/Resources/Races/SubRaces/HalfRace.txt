@@ -1,0 +1,5 @@
+{	
+'Index':4,
+'Lightfoot':[["stats",[5,1]],["abilities",["NatStealth"]]],
+'Stout':[["stats",[2,1]],["resistances", 10]]
+}

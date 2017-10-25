@@ -1,0 +1,9 @@
+{ 	'Name': 'Elf',
+'statBoost': [[1,2]],
+'speed': 30, 
+'size': 'Medium', 
+'sizeFlavor': [5,6],
+'langs': ["Common", "Elvish"],
+'age': [100, 750],
+'subRaceIndex': 2 
+}

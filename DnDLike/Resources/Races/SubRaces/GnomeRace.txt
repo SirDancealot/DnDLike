@@ -1,0 +1,5 @@
+{
+'Index':3,
+'Forest Gnome':[["stats",[1,1]],["spell",["minor illusion"]],["abilities",["Speak with small beasts"]]],
+'Rock Gnome':[["stats",[2,1]],["abilities",["artificers lore","tinker"]]]
+}

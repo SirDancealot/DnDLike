@@ -1,0 +1,13 @@
+{
+'Index':0,
+'Black':[["resistances",0],["abilities",["BW, AL"]]],
+'Blue':[["resistances",6],["abilities",["BW, LL"]]],
+'Brass':[["resistances",4],["abilities",["BW, FL"]]],
+'Bronze':[["resistances",6],["abilities",["BW, LL"]]],
+'Copper':[["resistances",0],["abilities",["BW, AL"]]],
+'Gold':[["resistances",4],["abilities",["BW, FC"]]],
+'Green':[["resistances",10],["abilities",["BW, PC"]]],
+'Red':[["resistances",4],["abilities",["BW, FC"]]],
+'Silver':[["resistances",3],["abilities",["BW, CC"]]],
+'White':[["resistances",3],["abilities",["BW, CC"]]]
+}

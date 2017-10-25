@@ -1,0 +1,11 @@
+{ 	'Name': 'Dwarf',
+'statBoost': [[2,2]],
+'speed': 25, 
+'size': 'Medium', 
+'sizeFlavor': [4,5],
+'langs': ["Common", "Dwarvish"],
+'age': [50, 350],
+'resist': 11,
+'subRaceIndex': 1,
+'traits': ["darkvision range 60"]
+}

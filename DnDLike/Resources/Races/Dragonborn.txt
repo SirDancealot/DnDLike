@@ -1,0 +1,10 @@
+{
+'Name': 'Dragonborn',
+'statBoost': [[0,2],[5,1]],
+'speed': 30,
+'size': 'Medium',
+'sizeFlavor': [6,8],
+'langs': ["Common", "Draconic"],
+'age': [15, 80],
+'subRaceIndex': 0
+}

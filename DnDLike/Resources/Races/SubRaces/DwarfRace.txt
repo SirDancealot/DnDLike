@@ -1,0 +1,4 @@
+{
+'Index':1,
+'Hill Dwarf':[["stats",[4,1]],["traits",["HP, PL1"]]],
+}

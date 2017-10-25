@@ -1,0 +1,9 @@
+{
+'Name': 'Tiefling',
+'statBoost': [[3,1],[5,2]], 
+'speed': 30, 
+'size': 'Medium', 
+'sizeFlavor': [5,6],
+'langs': ["Common", "Infernal"],
+'age': [18, 100] 
+}

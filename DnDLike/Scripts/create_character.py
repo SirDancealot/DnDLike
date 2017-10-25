@@ -153,8 +153,11 @@ def AssignRace():	#Assigning specific race values and traits
 	
 	raceDict = races[universal_functions.GetValidOption(1,9,"That is not a valid race-number from the list\nPlease try again: ", "What race do you want to play?\n1.\tDragonborn\n2.\tDwarf\n3.\tElf\n4.\tGnome\n5.\tHalf-Elf\n6.\tHalf-Orc\n7.\tHalfling\n8.\tHuman\n9.\tTiefling\nChoose 1/2/3/4/5/6/7/8/9: ")-1]
 	race = raceDict['Name']
-	if 'subRace' in raceDict:
-		AssignSubRace(subRaces[raceDict['subRace']])
+	if 'subRaceIndex' in raceDict:
+		for subRaceDict in subRaces:
+			if subRaceDict['Index'] == raceDict['subRaceIndex']:
+				AssignSubRace(subRaceDict)
+		#AssignSubRace(subRaces[raceDict['subRace']])
 	
 	for i in raceDict['statBoost']:
 		if type(i[0]) != int:
@@ -188,11 +191,11 @@ def AssignSubRace(subRaceDict):
 	for key in subRaceDict:
 		subRaces.append(key)
 	numSubRaces = len(subRaces)
-	choiseString = ("The race: " + race + " has " + str(numSubRaces) + " sub-races which are as follows:\n")
-	for i in range(numSubRaces):
-		choiseString += (str(i+1)+".\t"+subRaces[i]+"\n")
+	choiseString = ("The race: " + race + " has " + str(numSubRaces-1) + " sub-races which are as follows:\n")
+	for i in range(1,numSubRaces):
+		choiseString += (str(i)+".\t"+subRaces[i]+"\n")
 	choiseString += "Which sub-race do you want this character to be? "
-	subRace = subRaces[universal_functions.GetValidOption(1,numSubRaces,"That is not a subrace-number on the list",choiseString)-1]
+	subRace = subRaces[universal_functions.GetValidOption(1,numSubRaces-1,"That is not a subrace-number on the list",choiseString)]
 	
 	subRaceBonuses = ["resistances", "abilities", "stats", "proficiencies", "movement", "traits", "spell"]
 	subRaceBonusFunctions = [AddRes, AddAbility, ASI, AddProficiencie, SetSpeed, AddTrait, AddSpell]
@@ -241,113 +244,9 @@ def AddSpell(addSpells):
 def AssignDicts():	#a function to assign all my dictionaries for races, calsses and so on to a list of each type
 	global races
 	global subRaces
-	
-	Dragonborn = 	{ 	'Name': 'Dragonborn',
-						'statBoost': [[0,2],[5,1]], 
-						'speed': 30, 
-						'size': 'Medium',
-						'sizeFlavor': [6,8],
-						'langs': ["Common", "Draconic"],
-						'age': [15, 80],
-						'subRace': 0 
-						}						
-	Dwarf = 		{ 	'Name': 'Dwarf',
-						'statBoost': [[2,2]],
-						'speed': 25, 
-						'size': 'Medium', 
-						'sizeFlavor': [4,5],
-						'langs': ["Common", "Dwarvish"],
-						'age': [50, 350],
-						'resist': 11,
-						'subRace': 1,
-						'traits': ["darkvision range 60"]						
-						}						
-	Elf = 			{ 	'Name': 'Elf',
-						'statBoost': [[1,2]],
-						'speed': 30, 
-						'size': 'Medium', 
-						'sizeFlavor': [5,6],
-						'langs': ["Common", "Elvish"],
-						'age': [100, 750],
-						'subRace': 2 
-						}						
-	Gnome = 		{ 	'Name': 'Gnome',
-						'statBoost': [[3,2]], 
-						'speed': 25, 
-						'size': 'Small', 
-						'sizeFlavor': [3,4],
-						'langs': ["Common", "Gnomish"],
-						'age': [40, 500],
-						'subRace': 3 
-						}						
-	HalfElf = 		{ 	'Name': 'Half-Elf',
-						'statBoost': [[5,2],[universal_functions.GetValidOption,1],[universal_functions.GetValidOption,1]], 
-						'speed': 30, 
-						'size': 'Medium', 
-						'sizeFlavor': [5,6],
-						'langs': ["Common", "Elvish", "One of own choice"],
-						'age': [20, 200] 
-						}						
-	HalfOrc = 		{ 	'Name': 'Half-Orc',
-						'statBoost': [[0,2],[2,1]], 
-						'speed': 30, 
-						'size': 'Medium', 
-						'sizeFlavor': [5,6],
-						'langs': ["Common", "Orc"],
-						'age': [14, 75] 
-						}						
-	Halfling = 		{ 	'Name': 'Halfling',
-						'statBoost': [[1,2]], 
-						'speed': 25, 
-						'size': 'Small', 
-						'sizeFlavor': [3,4],
-						'langs': ["Common", "Halfling"],
-						'age': [20, 150],
-						'subRace': 4 
-						}						
-	Human = 		{ 	'Name': 'Human',
-						'statBoost': [[0,1],[1,1],[2,1],[3,1],[4,1],[5,1]], 
-						'speed': 30, 
-						'size': 'Medium', 
-						'sizeFlavor': [5,6],
-						'langs': ["Common", "One of own choice"],
-						'age': [18, 80] 
-						}						
-	Tiefling = 		{ 	'Name': 'Tiefling',
-						'statBoost': [[3,1],[5,2]], 
-						'speed': 30, 
-						'size': 'Medium', 
-						'sizeFlavor': [5,6],
-						'langs': ["Common", "Infernal"],
-						'age': [18, 100] 
-						}	
-	races.extend(( Dragonborn, Dwarf, Elf, Gnome, HalfElf, HalfOrc, Halfling, Human, Tiefling ))
-	
-	DragonColor = 	{	'Black': 			[["resistances",0],["abilities",["BW, AL"]]],
-						'Blue': 			[["resistances",6],["abilities",["BW, LL"]]],
-						'Brass': 			[["resistances",4],["abilities",["BW, FL"]]],
-						'Bronze': 			[["resistances",6],["abilities",["BW, LL"]]],
-						'Copper': 			[["resistances",0],["abilities",["BW, AL"]]],
-						'Gold': 			[["resistances",4],["abilities",["BW, FC"]]],
-						'Green': 			[["resistances",10],["abilities",["BW, PC"]]],
-						'Red': 				[["resistances",4],["abilities",["BW, FC"]]],
-						'Silver': 			[["resistances",3],["abilities",["BW, CC"]]],
-						'White': 			[["resistances",3],["abilities",["BW, CC"]]]
-					} 	#Dragonborn
-	DwarfRace = 	{	'Hill Dwarf': 		[["stats",[4,1]],["traits",["HP, PL1"]]],
-					}		#Dwarf
-	ElfRace = 		{	'High Elf':			[["stats",[3,1]],["proficiencies",["Longsword","Shortsword","Shortbow","Longbow"]]],
-						'Wood Elf':			[["stats",[4,1]],["proficiencies",["Longsword","Shortsword","Shortbow","Longbow"]],["movement",35]],
-						'Dark Elf':			[["stats",[5,1]],["proficiencies",["Rapier, Shortsword","Hand crossbow"]],["traits",["darkvision range 120"]]]
-					}		#Elf
-	GnomeRace = 	{	'Forest Gnome':		[["stats",[1,1]],["spell",["minor illusion"]],["abilities",["Speak with small beasts"]]],
-						'Rock Gnome':		[["stats",[2,1]],["abilities",["artificers lore","tinker"]]]
-					}		#Gnome
-	HalfRace = 		{	'Lightfoot':		[["stats",[5,1]],["abilities",["NatStealth"]]],
-						'Stout':			[["stats",[2,1]],["resistances", 10]]
-					}		#Halfling
-	
-	subRaces.extend((DragonColor, DwarfRace, ElfRace, GnomeRace, HalfRace))
+				
+	races = [eval(open("Resources/Races/"+x,'r').read()) for x in os.listdir("Resources/Races/") if x.endswith(".txt")]
+	subRaces = [eval(open("Resources/Races/SubRaces/"+x,'r').read()) for x in os.listdir("Resources/Races/SubRaces/") if x.endswith(".txt")]
 	
 def AssignAlignment():
 	global alignment

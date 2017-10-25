@@ -9,7 +9,7 @@ import os
 def AssignDicts():
 	level_up.AssignDicts()
 	create_character.AssignDicts()
-
+	
 AssignDicts()
 programs = [create_character, create_misc, level_up, solo_encounter, diceroller]
 numOfScripts = len(programs)

@@ -1,0 +1,9 @@
+{ 	'Name': 'Gnome',
+'statBoost': [[3,2]], 
+'speed': 25, 
+'size': 'Small', 
+'sizeFlavor': [3,4],
+'langs': ["Common", "Gnomish"],
+'age': [40, 500],
+'subRaceIndex': 3 
+}

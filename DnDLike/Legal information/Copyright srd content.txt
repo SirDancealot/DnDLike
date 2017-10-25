@@ -1,13 +1,13 @@
 Content that applies to this license:
 as of Alpha V0.1.0.1
-	- everything in Resources/Classes
-	- everything in Resources/Races
-	- everything in Resources/Spells
-	- Scripts/create_character.py
-		- some ideas from the srd are currently hard coded into file
+	- everything in Resources/Classes with same name as Classes in the srd
+	- everything in Resources/Races with same name as Races in the srd and potentally responding subraces
+	- everything in Resources/Spells with same name as Spells in the srd
 		
 Earlier versions(no longer under the OGL):
 	- Scripts/solo_encounter.py
+		- some ideas from the srd are currently hard coded into file
+	- Scripts/create_character.py
 		- some ideas from the srd are currently hard coded into file
 
 Permission to copy, modify and distribute the files collectively known as the System Reference Document 5.1 (“SRD5”) is granted solely through the use of the Open Gaming License, Version	1.0a.

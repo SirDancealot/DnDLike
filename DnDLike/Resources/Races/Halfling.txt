@@ -1,0 +1,10 @@
+{
+'Name': 'Halfling',
+'statBoost': [[1,2]], 
+'speed': 25, 
+'size': 'Small', 
+'sizeFlavor': [3,4],
+'langs': ["Common", "Halfling"],
+'age': [20, 150],
+'subRaceIndex': 4 
+}

@@ -1,0 +1,6 @@
+{
+'Index':2,
+'High Elf':[["stats",[3,1]],["proficiencies",["Longsword","Shortsword","Shortbow","Longbow"]]],
+'Wood Elf':[["stats",[4,1]],["proficiencies",["Longsword","Shortsword","Shortbow","Longbow"]],["movement",35]],
+'Dark Elf':[["stats",[5,1]],["proficiencies",["Rapier, Shortsword","Hand crossbow"]],["traits",["darkvision range 120"]]]
+}
