@@ -1,11 +1,12 @@
-import inspect
+#import inspect
 import math
 import random
 from Scripts import universal_functions
+from Scripts import universal_data
 abilityID = 3
-stackList = inspect.stack()
-caller = universal_functions.GetCaller(stackList)
-exec("from Scripts import " + caller)
+#stackList = inspect.stack()
+#caller = universal_functions.GetCaller(stackList)
+#exec("from Scripts import " + caller)
 
 def SwordAttack(user, target, charList):
 	strMod = math.floor((charList[user]['Stats'][0]-10)/2)
@@ -23,4 +24,4 @@ def SwordAttack(user, target, charList):
 		print("You missed")
 	return([target,-damage])
 
-exec(caller+".abilities.append([abilityID,SwordAttack])")
+universal_data.abilities.append([abilityID,SwordAttack])

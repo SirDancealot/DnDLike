@@ -1,11 +1,12 @@
-import inspect
+#import inspect
 import math
 import random
+from Scripts import universal_data
 from Scripts import universal_functions
 abilityID = 1
-stackList = inspect.stack()
-caller = universal_functions.GetCaller(stackList)
-exec("from Scripts import " + caller)
+#stackList = inspect.stack()
+#caller = universal_functions.GetCaller(stackList)
+#exec("from Scripts import " + caller)
 
 def FireBolt(user, target, charList):
 	intMod = math.floor((charList[user]['Stats'][3]-10)/2)
@@ -23,4 +24,4 @@ def FireBolt(user, target, charList):
 		print("You missed")
 	return([target,-damage])
 
-exec(caller+".abilities.append([abilityID,FireBolt])")
+universal_data.abilities.append([abilityID,FireBolt])

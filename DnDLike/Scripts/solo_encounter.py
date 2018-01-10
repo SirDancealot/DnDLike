@@ -6,7 +6,8 @@ import sys
 sys.path.append("Resources/")
 from Scripts import create_character
 from Scripts import universal_functions
-abilities = []
+from Scripts import universal_data
+abilities = universal_data.abilities
 from Spells import *
 
 health = []

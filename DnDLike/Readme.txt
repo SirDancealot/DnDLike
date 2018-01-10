@@ -1,4 +1,4 @@
-Welcome to DnDlike.	Alpha V0.1.2.3A
+Welcome to DnDlike.	Alpha V0.1.2.3B
 This is a character creator/battle simulator based on the Dungeons and Dragons mechanics.
 
 Before modifying and distributing be sure to read content in folder "Legal information"
@@ -25,11 +25,11 @@ Planned content:
 		- Only need to add gear and buff spells
 	- Spell encykopedia (of spells in the spell folder)
 	- Possibly other stuff
-	
-Known bugs:
-	- When making a spell in the spell creator it does not show up in the battle simulator until the program has ben restarted.
 
 Changelog:
+	Alpha V0.1.2.3B:
+		- Bugfix: When creating a spell it now gets added to the attacklist instantly instead of requiering a restart
+	
 	Alpha V0.1.2.3A:
 		- Added an option to show the individual rolls in the diceroller
 		

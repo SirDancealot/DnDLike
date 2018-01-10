@@ -5,7 +5,8 @@ import sys
 from Scripts import solo_encounter
 from Scripts import create_character
 from Scripts import universal_functions
-abilities = []
+from Scripts import universal_data
+abilities = universal_data.abilities
 abilityIDs = []
 from Spells import *
 
@@ -45,14 +46,11 @@ def CreateSpell():
 	
 		
 	file = open("Resources/Spells/" + spellName + ".py","w")
-	file.write("import inspect\n")
 	file.write("import math\n")
 	file.write("import random\n")
 	file.write("from Scripts import universal_functions\n")
+	file.write("from Scripts import universal_data\n")
 	file.write("abilityID = " + str(abilityID) + "\n")
-	file.write("stackList = inspect.stack()\n")
-	file.write("caller = universal_functions.GetCaller(stackList)\n")
-	file.write("exec('from Scripts import ' + caller)\n")
 	file.write("def " + spellName + "(user, target, charList):\n")
 	file.write("\tmodifyer = math.floor((charList[user]['Stats'][" + str(modifyer) + "]-10)/2)\n")
 	file.write("\tattackRoll = universal_functions.rollDice(1,20,1,1,False) + modifyer\n")
@@ -68,7 +66,7 @@ def CreateSpell():
 	file.write("\t\tdamage = 0\n")
 	file.write("\t\tprint(charList[user]['Name'] + ' missed')\n")
 	file.write("\treturn([target,-damage])\n")
-	file.write("exec(caller+'.abilities.append([abilityID," + spellName + "])')\n")
+	file.write("universal_data.abilities.append([abilityID," + spellName + "])\n")
 	file.close()
 	
 	exec("from Spells import " + spellName)

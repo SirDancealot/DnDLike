@@ -1,11 +1,12 @@
-import inspect
+#import inspect
 import math
 import random
+from Scripts import universal_data
 from Scripts import universal_functions
 abilityID = 4
-stackList = inspect.stack()
-caller = universal_functions.GetCaller(stackList)
-exec("from Scripts import " + caller)
+#stackList = inspect.stack()
+#caller = universal_functions.GetCaller(stackList)
+#exec("from Scripts import " + caller)
 
 def DaggerAttack(user, target, charList):
 	dexMod = math.floor((charList[user]['Stats'][1]-10)/2)
@@ -23,4 +24,4 @@ def DaggerAttack(user, target, charList):
 		print("You missed")
 	return([target,-damage])
 
-exec(caller+".abilities.append([abilityID,DaggerAttack])")
+universal_data.abilities.append([abilityID,DaggerAttack])
